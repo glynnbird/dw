@@ -2,6 +2,11 @@
 
 This project contains work to create database of web page articles imported from a text file.
 
+* import CSV data into Cloudant
+* spider the URLs and embelish the documents with titles and text body
+* create Lucene index with facets
+* query the data
+
 ## Import the data
 
 Run `import.sh`.
