@@ -1,0 +1,40 @@
+url	topic	type	product	language
+https://www.cloudant.com/for-developers/migrating-data/	ETL	page	Cloudant	
+http://www.cloudant.com/for-developers/crud/	CRUD	page	Cloudant	Javascript
+http://www.cloudant.com/for-developers/search/	Search	page	Cloudant	
+http://www.cloudant.com/for-developers/all_docs/	api	page	Cloudant	
+http://www.cloudant.com/for-developers/faq/	faq	page	Cloudant	
+http://cloudant.com/blog/introducing-cloudant-query/	Query	blog	Cloudant	
+http://cloudant.com/blog/using-cloudant-with-node-js/	Node	blog	Cloudant	Javascript
+http://cloudant.com/blog/webizing-your-database-with-linked-data-in-json-ld/	linkeddata	blog	Cloudant	
+http://cloudant.com/blog/introducing-cloudant-sync/	sync	blog	Cloudant	Objective-C
+http://cloudant.com/blog/introducing-cloudant-local/	local	blog	Cloudant	
+http://cloudant.com/blog/pouchdb/	sync	blog	Cloudant	Javascript
+http://cloudant.com/blog/building-apps-using-java-with-cloudant-on-ibm-bluemix/	java	blog	Cloudant	Java
+http://cloudant.com/blog/geospatial-indexing/	geo	blog	Cloudant	
+http://cloudant.com/blog/schemas-in-couchdb/	tools	blog	Cloudant	
+http://cloudant.com/blog/quilter-open-source-file-sharing/	sync	blog	Cloudant	
+http://cloudant.com/blog/syncing-car-telemetry-data-in-real-time-fords-openxc-api-and-cloudants-traffic-tamer-app/	sync	blog	Cloudant	
+http://cloudant.com/blog/authorized-curl-a-k-a-acurl/	tools	blog	Cloudant	
+http://cloudant.com/blog/coding-for-eventual-consistency/	eventual consistency	blog	Cloudant	
+http://cloudant.com/blog/replication-with-cloudant-pt-1/	sync	blog	Cloudant	
+http://cloudant.com/blog/replication-with-cloudant-pt-2/	sync	blog	Cloudant	
+http://cloudant.com/blog/replication-with-cloudant-pt-3/	sync	blog	Cloudant	
+http://cloudant.com/blog/why-replication-is-awesome/	sync	blog	Cloudant	
+http://cloudant.com/blog/search-faceting-from-scratch-2/	search	blog	Cloudant	
+http://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/	analytics	blog	Integration	
+http://cloudant.com/blog/top-6-questions-from-our-webinar-on-top-6-questions-about-sql-nosql-migrations/	ETL	blog	Cloudant	
+http://examples.cloudant.com/lobby-search/_design/lookup/index.html	search	tutorial	Cloudant	
+http://examples.cloudant.com/simplegeo_places/_design/geo/search.html	Geo	tutorial	Cloudant	
+http://www.youtube.com/watch?v=qaOBCsFjgS8	General	video	Cloudant	
+http://www.youtube.com/watch?v=BKQ9kXKoHS8	General	video	Cloudant	
+http://www.youtube.com/watch?v=dUzXirGdnRs	Query	video	Cloudant	
+http://www.youtube.com/watch?v=CbhQiwg5fBs	geo	video	Cloudant	
+http://www.youtube.com/watch?v=PVw5nTiyULo	geo	video	Cloudant	
+http://www.youtube.com/watch?v=Yhs6kA6JIvQ	sync	video	Cloudant	
+http://www.youtube.com/watch?v=Ej5BmWjjqbY	IoT	video	Cloudant	
+http://www.youtube.com/watch?v=DvQVviHqkoM	Mobile	video	Cloudant	
+http://www.youtube.com/watch?v=kWgAQeAw9Qo	Health	video	Cloudant	
+http://www.youtube.com/watch?v=sqW-Vi74FKc	IoT	video	Cloudant	
+https://cloudant.com/for-developers/libraries-and-tutorials/	tools	page	Cloudant	Java,C#,Javascript,Node.js,PHP,Python,Ruby,Scala
+http://examples.cloudant.com/whatwouldbiebersay/_design/whatwouldbiebersay/index.html	MapReduce	tutorial	Cloudant	

@@ -1,0 +1,11 @@
+{
+  "_id": "_design/search",
+  "views": {},
+  "language": "javascript",
+  "indexes": {
+    "search": {
+      "analyzer": "standard",
+      "index": "function (doc) {\n if (doc.name) {\n   index(\"name\", doc.name, {store:true});\n   index(\"body\", doc.body, {store: false});\n   for (var i in doc.languages) {\n     index(\"language\", doc.languages[i], {store:true, facet:true});\n   }  \n   for (var i in doc.technologies) {\n     index(\"technology\", doc.technologies[i], {store:true, facet:true});\n   }\n   for (var i in doc.solutions) {\n     index(\"solution\", doc.solutions[i], {store:true, facet:true});\n   }\n   index(\"type\", doc.type, {store:true, facet:true});\n }\n};"
+    }
+  }
+}
