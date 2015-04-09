@@ -44,7 +44,28 @@ Notice:
 
 ## Create the index
 
-Run `./create_index.sh` to create a Lucene index
+Run `./create_index.sh` to create a Lucene index.
+
+The index is built like this:
+
+```
+function (doc) {
+ if (doc.name) {
+   index("name", doc.name, {store:true});
+   index("body", doc.body, {store: false});
+   for (var i in doc.languages) {
+     index("language", doc.languages[i], {store:true, facet:true});
+   }  
+   for (var i in doc.technologies) {
+     index("technology", doc.technologies[i], {store:true, facet:true});
+   }
+   for (var i in doc.solutions) {
+     index("solution", doc.solutions[i], {store:true, facet:true});
+   }
+   index("type", doc.type, {store:true, facet:true});
+ }
+};
+```
 
 ## Query!
 
