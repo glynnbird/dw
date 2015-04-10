@@ -78,9 +78,9 @@ function (doc) {
 
 (https://reader.cloudant.com/dw/_design/search/_search/search?q=*:*&limit=0&counts=[%22solution%22,%22technology%22,%22type%22])
 
-* q=*:* - set the query string to '*:*' which means 'everything'
-* limit=0 - we don't actually want any search results
-* counts=["solutions","technology","type"] - return the facet counts for these three fields
+* `q=*:*` - set the query string to '*:*' which means 'everything'
+* `limit=0` - we don't actually want any search results
+* `counts=["solutions","technology","type"]` - return the facet counts for these three fields
 
 ### Search the document name
 
@@ -88,9 +88,9 @@ function (doc) {
 
 To search the page title (name) we use
 
-* q=name:data - find documents whose name contains 'data'
-* limit=10 - this time we do want search results
-* counts=["solutions","technology","type"] - return the facet counts for these three fields
+* `q=name:data` - find documents whose name contains 'data'
+* `limit=10` - this time we do want search results
+* `counts=["solutions","technology","type"]` - return the facet counts for these three fields
 
 
 ## Search the HTML body
@@ -99,7 +99,7 @@ To search the page title (name) we use
 
 We can search the spidered document body itself. Results are returned in "best match first" order.
 
-* q=body:curl post - find documents whose body matches "curl post"
+* `q=body:curl post` - find documents whose body matches "curl post"
 
 
 ## Find only blog posts
@@ -108,7 +108,7 @@ We can search the spidered document body itself. Results are returned in "best m
 
 We can limit the search to only blog posts.
 
-* q=type:blog AND name:geospatial - find 'blog' documents whose name contains 'geospatial'
+* `q=type:blog AND name:geospatial` - find 'blog' documents whose name contains 'geospatial'
 
 
 ## To do
