@@ -72,10 +72,12 @@
       
       var searchText = $('#searchtext').val();
       var q = "";
+      var sort = null;
       if(searchText.length>0) {
         q = "(name:"+searchText + " OR body:"+searchText+")";
       } else {
         q = "*:*";
+        sort = '["-date"]'; // newest first
       }
       
       // add filter to the query string - filter is an array of stuff
@@ -87,16 +89,18 @@
       // render the query and filter
       $('#qs').html(q);  
       var limit = 10;      
-              
-      var obj = {
-        url: "https://reader.cloudant.com/dw/_design/search/_search/search",
-        data: {
+      var qs = {
           q:q,
           limit:limit,
           counts: '["solution","technology","type"]',
           include_docs:true
-
-        },
+        };       
+      if(sort) {
+        qs.sort = sort;
+      } 
+      var obj = {
+        url: "https://reader.cloudant.com/dw/_design/search/_search/search",
+        data: qs,
         dataType: "json",
         method: "get"
       };
