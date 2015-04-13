@@ -121,9 +121,16 @@
           for(var j in doc.technologies) {
             html += '<span class="label label-success sep">' + doc.technologies[j] + '</span>'
           }
-          html += '<span class="label label-info sep">' + doc.type + '</span>'
+          if(doc.languages && doc.languages.length>0) {
+             console.log(doc.languages)
+            for(var j in doc.languages) {
+              html += '<span class="label label-info sep">' + doc.languages[j] + '</span>'
+            }
+          }
+         
           html += '</div>';
         }
+        
         $('#results').html(html);
         
         // render facets
