@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dev Center</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      
+    <style type="text/css">
+      body { margin-top: 70px}
+      .sep { margin-right: 10px}
+      #facets { background-color: #aaa; padding-bottom:30px;}
+    </style>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return submitForm()">
+          <div class="form-group">
+            <input id="searchtext" type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </nav>  
+    
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Dev Centre/Center</h1>
+        <p>For all of your Cloud Data Services needs ...</p>
+        <h4 id="qs"></h4>
+      </div>
+
+    
+      <div class="row">
+        <div id="facets" class="col-md-3">
+          
+        </div>
+        <div id="results" class="col-md-9">
+        </div>
+      </div>
+    
+    
+    </div>
+    
+
+    
+    <script type="text/javascript">
+    
+    
+    var filter = { };
+    var doSearch = function() {
+      
+      var searchText = $('#searchtext').val();
+      var q = "";
+      if(searchText.length>0) {
+        q = "(name:"+searchText + " OR body:"+searchText+")";
+      } else {
+        q = "*:*";
+      }
+      
+      // add filter to the query string - filter is an array of stuff
+      for(var i in filter) {
+        q += " AND ";
+        q += i + ":" + filter[i];
+      }
+      
+      // render the query and filter
+      $('#qs').html(q);  
+      var limit = 10;      
+              
+      var obj = {
+        url: "https://reader.cloudant.com/dw/_design/search/_search/search",
+        data: {
+          q:q,
+          limit:limit,
+          counts: '["solution","technology","type"]',
+          include_docs:true
+
+        },
+        dataType: "json",
+        method: "get"
+      };
+      
+      $.ajax(obj).done(function(data) {
+        
+        // render docs
+        var html = "";
+        for(var i in data.rows) {
+          var doc = data.rows[i].doc;
+          html += '<div class="alert">';
+          html += '<h3><a href="' + doc.url + '" target="_new">'+doc.name+'</a></h3>';
+          html += '<p>' + doc.body.split(' ').splice(0,100).join(' ') +'...</p>'
+          html += '<span class="label label-default sep">' + doc.type + '</span>'
+          for(var j in doc.solutions) {
+            html += '<span class="label label-primary sep">' + doc.solutions[j] + '</span>'
+          }
+          for(var j in doc.technologies) {
+            html += '<span class="label label-success sep">' + doc.technologies[j] + '</span>'
+          }
+          html += '<span class="label label-info sep">' + doc.type + '</span>'
+          html += '</div>';
+        }
+        $('#results').html(html);
+        
+        // render facets
+        var html ="";
+        html += '<h3>Solutions</h3>';
+        for(var j in data.counts.solution) {
+          html += '<a href="Javascript:applyFilter(\'solution\',\'' + j + '\')">';
+          html += '<span class="label label-primary sep">' + j + '(' + data.counts.solution[j] +  ')</span>';
+          html += '</a><br>'    
+        }
+        html += '<h3>Type</h3>';
+        for(var j in data.counts.type) {
+          html += '<a href="Javascript:applyFilter(\'type\',\'' + j + '\')">';
+          html += '<span class="label label-default sep">' + j + '(' + data.counts.type[j] +  ')</span>'    
+          html += '</a><br>'    
+        }
+        html += '<h3>Technologies</h3>';
+        for(var j in data.counts.technology) {
+          html += '<a href="Javascript:applyFilter(\'technology\',\'' + j + '\')">';
+          html += '<span class="label label-success sep">' + j + '(' + data.counts.technology[j] +  ')</span>'    
+          html += '</a><br>'    
+        }
+        $('#facets').html(html);
+
+      });
+      
+    };
+    
+    var applyFilter = function(key, value) {
+      filter[key] = value;
+      doSearch();
+    }
+    
+    var submitForm = function() {
+      filter = {};
+      doSearch();
+      return false;
+    }
+    
+    var onload = function() {
+      doSearch();
+    }
+    
+    $(document).ready(onload);
+    </script>
+
+    
+  </body>
+</html>
