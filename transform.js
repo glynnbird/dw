@@ -1,35 +1,24 @@
-// example transformation function
 
 
-
-// -- remove leading and trailing quotes
 var template =  {  
-   "githubId":"10251075",
-   "name":"appengine-endpoints-helloendpoints-java-maven",
-   "full_name":"GoogleCloudPlatform/appengine-endpoints-helloendpoints-java-maven",
-   "url":"https://github.com/GoogleCloudPlatform/appengine-endpoints-helloendpoints-java-maven",
-   "created_at":"2013-05-23T18:58:32Z",
-   "updated_at":"2014-08-12T13:16:52Z",
+   "githubId":"",
+   "name":"",
+   "full_name":"",
+   "url":"",
+   "created_at":"",
+   "updated_at":"",
    "languages":[  
-      "Java",
-      "CSS",
-      "JavaScript"
    ],
    "technologies":[  
-      "App Engine",
-      "Endpoints"
    ],
-   "friendly_name":"Hello Endpoints Java",
-   "description":"Hello Endpoints ....",
+   "friendly_name":"",
+   "description":"",
    "solutions":[  
-      "Mobile",
-      "Getting Started"
    ],
    "featured":false
 };
 
 var x = function(raw) {
-
   var doc = JSON.parse(JSON.stringify(template));
   doc.url = raw.url;
   doc.type= raw.type;
@@ -37,6 +26,11 @@ var x = function(raw) {
   doc.languages = (raw.language.length>0)?raw.language.split(","):[]
   doc.githubId="";
   doc.solutions = raw.topic.split(",");
+  doc.description = raw.description;
+  doc.created_at = raw.date;
+  doc.updated_at = raw.date;
+  doc.name = raw.title;
+  doc.friendly_name = "";
   return doc;
 }
 

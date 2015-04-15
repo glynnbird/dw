@@ -8,13 +8,10 @@ var dw = cloudant.db.use('dw');
 
 var q = async.queue(function(doc, callback) {
   request(doc.url, function (error, response, body) {
-   //    console.log(body) // Show the HTML for the Google homepage. 
+//       console.log(body) // Show the HTML for the Google homepage. 
       var data = unfluff(body);
-      doc.name = data.title
       doc.full_name = data.title;
-      doc.friendly_name = data.title;
       doc.body = data.text;
-      doc.description = "";
       dw.insert(doc, function(err, d) {
         console.log(d);
         callback(null);

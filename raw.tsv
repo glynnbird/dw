@@ -1,40 +1,45 @@
-url	topic	type	product	language
-https://www.cloudant.com/for-developers/migrating-data/	ETL	page	Cloudant	
-http://www.cloudant.com/for-developers/crud/	CRUD	page	Cloudant	Javascript
-http://www.cloudant.com/for-developers/search/	Search	page	Cloudant	
-http://www.cloudant.com/for-developers/all_docs/	api	page	Cloudant	
-http://www.cloudant.com/for-developers/faq/	faq	page	Cloudant	
-http://cloudant.com/blog/introducing-cloudant-query/	Query	blog	Cloudant	
-http://cloudant.com/blog/using-cloudant-with-node-js/	Node	blog	Cloudant	Javascript
-http://cloudant.com/blog/webizing-your-database-with-linked-data-in-json-ld/	linkeddata	blog	Cloudant	
-http://cloudant.com/blog/introducing-cloudant-sync/	sync	blog	Cloudant	Objective-C
-http://cloudant.com/blog/introducing-cloudant-local/	local	blog	Cloudant	
-http://cloudant.com/blog/pouchdb/	sync	blog	Cloudant	Javascript
-http://cloudant.com/blog/building-apps-using-java-with-cloudant-on-ibm-bluemix/	java	blog	Cloudant	Java
-http://cloudant.com/blog/geospatial-indexing/	geo	blog	Cloudant	
-http://cloudant.com/blog/schemas-in-couchdb/	tools	blog	Cloudant	
-http://cloudant.com/blog/quilter-open-source-file-sharing/	sync	blog	Cloudant	
-http://cloudant.com/blog/syncing-car-telemetry-data-in-real-time-fords-openxc-api-and-cloudants-traffic-tamer-app/	sync	blog	Cloudant	
-http://cloudant.com/blog/authorized-curl-a-k-a-acurl/	tools	blog	Cloudant	
-http://cloudant.com/blog/coding-for-eventual-consistency/	eventual consistency	blog	Cloudant	
-http://cloudant.com/blog/replication-with-cloudant-pt-1/	sync	blog	Cloudant	
-http://cloudant.com/blog/replication-with-cloudant-pt-2/	sync	blog	Cloudant	
-http://cloudant.com/blog/replication-with-cloudant-pt-3/	sync	blog	Cloudant	
-http://cloudant.com/blog/why-replication-is-awesome/	sync	blog	Cloudant	
-http://cloudant.com/blog/search-faceting-from-scratch-2/	search	blog	Cloudant	
-http://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/	analytics	blog	Integration	
-http://cloudant.com/blog/top-6-questions-from-our-webinar-on-top-6-questions-about-sql-nosql-migrations/	ETL	blog	Cloudant	
-http://examples.cloudant.com/lobby-search/_design/lookup/index.html	search	tutorial	Cloudant	
-http://examples.cloudant.com/simplegeo_places/_design/geo/search.html	Geo	tutorial	Cloudant	
-http://www.youtube.com/watch?v=qaOBCsFjgS8	General	video	Cloudant	
-http://www.youtube.com/watch?v=BKQ9kXKoHS8	General	video	Cloudant	
-http://www.youtube.com/watch?v=dUzXirGdnRs	Query	video	Cloudant	
-http://www.youtube.com/watch?v=CbhQiwg5fBs	geo	video	Cloudant	
-http://www.youtube.com/watch?v=PVw5nTiyULo	geo	video	Cloudant	
-http://www.youtube.com/watch?v=Yhs6kA6JIvQ	sync	video	Cloudant	
-http://www.youtube.com/watch?v=Ej5BmWjjqbY	IoT	video	Cloudant	
-http://www.youtube.com/watch?v=DvQVviHqkoM	Mobile	video	Cloudant	
-http://www.youtube.com/watch?v=kWgAQeAw9Qo	Health	video	Cloudant	
-http://www.youtube.com/watch?v=sqW-Vi74FKc	IoT	video	Cloudant	
-https://cloudant.com/for-developers/libraries-and-tutorials/	tools	page	Cloudant	Java,C#,Javascript,Node.js,PHP,Python,Ruby,Scala
-http://examples.cloudant.com/whatwouldbiebersay/_design/whatwouldbiebersay/index.html	MapReduce	tutorial	Cloudant	
+url	topic	type	level	product	language	title	description	date
+https://www.cloudant.com/for-developers/migrating-data/	ETL	page	intermediate	Cloudant		Data Migration & Transformation Tools	This page includes a number of utilities to migrate and transform your data. Note that in most cases, tools that are compatible with Apache CouchDB will also work with Cloudant so are included for your reference.	2013-01-01
+http://www.cloudant.com/for-developers/crud/	CRUD	page	beginner	Cloudant	Javascript	Create/Read/Update/Delete operations via Cloudant's RESTful API	A simple guide to creating, reading, updating and deleting documents using Cloudant's simple HTTP API.	2013-01-01
+http://www.cloudant.com/for-developers/search/	Search	page	intermediate	Cloudant		Cloudant Search - A Beginners Guide	Create full-text search indexes, built on Apache Lucene, with Cloudant Search. This step-by-step guide shows you how.	2013-01-01
+http://www.cloudant.com/for-developers/all_docs/	api	page	beginner	Cloudant		Cloudant _all_docs	A guide to using Cloudant's _all_docs endpoint to retrieve documents by id, or within a range of keys using this interactive tutorial.	2013-01-01
+http://www.cloudant.com/for-developers/faq/	faq	page	beginner	Cloudant		Cloudant FAQ	The most frequently asked questions about the Cloudant database.	2013-01-01
+http://cloudant.com/blog/introducing-cloudant-query/	Query	blog	intermediate	Cloudant	Javascript	Introducing Cloudant Query 	Cloudant Query gives you a declarative way to define and query indexes on your database. Based on MongoDB's query language, Cloudant Query makes it simple to query your data using simple operators. 	2014-06-25
+http://cloudant.com/blog/using-cloudant-with-node-js/	Node	blog	beginner	Cloudant	Javascript,Node.js	Using Cloudant with Node.js	A guide to some of the tools you can use to interact with Cloudant when using the Node.js programming language.	2013-09-26
+http://cloudant.com/blog/webizing-your-database-with-linked-data-in-json-ld/	linkeddata	blog	intermediate	Cloudant		Webizing your database with linked data	JSON-LD (JSON Linked Data) is a simple way of providing semantic meaning for the terms and values in a JSON document. Providing that meaning with the JSON means that the next developer's application can parse and understand the JSON you gave them.	2014-02-27
+http://cloudant.com/blog/introducing-cloudant-sync/	sync,mobile	blog	intermediate	Cloudant	Objective-C,Java	Cloudant Sync	Cloudant Sync allows you to create native mobile apps for iOS and Android that can store data locally and sync with Cloudant when online. This allows your mobile application continue to work offline to deliver a great user experience.	2014-02-18
+http://cloudant.com/blog/introducing-cloudant-local/	local	blog	beginner	Cloudant		Introducing Cloudant Local	Cloudant Local brings Cloudant's NoSQL database to customers whose regulatory restrictions make it difficult to put their data into the cloud.	2014-10-27
+http://cloudant.com/blog/pouchdb/	sync,mobile	blog	intermediate	Cloudant	Javascript	PouchDB	PouchDB is in-browser database that syncs with any Couch-like database such as Cloudant. It allows offline-first mobile and web-apps to be created that sync to the cloud when online.	2013-10-23
+http://cloudant.com/blog/building-apps-using-java-with-cloudant-on-ibm-bluemix/	java,Bluemix	blog	beginner	Cloudant	Java	Building apps using Java with Cloudant	The BlueMix Platform-as-a-Service allows Java applications to use a Cloudant database to store their data. This guide shows you how.	2014-08-25
+http://cloudant.com/blog/geospatial-indexing/	geo	blog	advanced	Cloudant		Choosing the right Geospatial index	Cloudant's Geospatial features allow GIS applications to built for a fraction of a cost of traditional solutions. This blog post describes the choices you face when choosing a Geospatial index for your applicaiton.	2014-07-14
+http://cloudant.com/blog/schemas-in-couchdb/	tools,schema	blog	intermediate	Cloudant		Schemas in CouchDB	NoSQL doesn't force you to define the schema of your documents up front. That isn't to say that you have no schema in your database, only that you have flexibility to alter it at will. This blog post describes some techniques for how to organise your data to minimise storage while retaining document readability.	2012-09-07
+http://cloudant.com/blog/quilter-open-source-file-sharing/	sync	blog	intermediate	Cloudant		Quilter: Open-source file sharing	Quilter is an open-source project that allows files to be stored and shared using Cloudant.	2014-02-07
+http://cloudant.com/blog/syncing-car-telemetry-data-in-real-time-fords-openxc-api-and-cloudants-traffic-tamer-app/	sync,mobile	blog	intermediate	Cloudant		Syncing Car Telemetry Data in Real-Time	Cloudant's Traffic Tamer app collects car telemetry data. Every time a car stops, this event is synchronized with Cloudant to enable crowd-sourced traffic information. This post describes how PouchDB is used to collect data offline and sync to Cloudant when on the network.	2014-03-13
+http://cloudant.com/blog/authorized-curl-a-k-a-acurl/	tools	blog	intermediate	Cloudant		Authorized Curl - a.k.a acurl	At Cloudant, we use curl a lot to interact with Cloudant's HTTP API. 'acurl' is a tool that allows you to interact with Cloudant without having to enter the username and password with every request.	2013-11-27
+http://cloudant.com/blog/coding-for-eventual-consistency/	eventual consistency	blog	intermediate	Cloudant		Coding for Eventual Consistency	Cloudant is a highly available, partition tolerant distributed database and as such is 'eventually consistent', as per CAP Theorem. This blog outlines some techniques for dealing with eventual consistency in practice.	2013-01-23
+http://cloudant.com/blog/replication-with-cloudant-pt-1/	sync	blog	intermediate	Cloudant		Replication with Cloudant - Part 1	Cloudant's replication features allows data to synced within accounts, across Cloudant clusters and to othe Couch-like targets such as CouchDB & PouchDB. Part one of three.	2013-06-03
+http://cloudant.com/blog/replication-with-cloudant-pt-2/	sync	blog	intermediate	Cloudant		Replication with Cloudant - Part 2	Cloudant's replication features allows data to synced within accounts, across Cloudant clusters and to othe Couch-like targets such as CouchDB & PouchDB. Part two of three.	2013-06-03
+http://cloudant.com/blog/replication-with-cloudant-pt-3/	sync	blog	intermediate	Cloudant		Replication with Cloudant - Part 3	Cloudant's replication features allows data to synced within accounts, across Cloudant clusters and to othe Couch-like targets such as CouchDB & PouchDB. Part three of three.	2013-06-03
+http://cloudant.com/blog/why-replication-is-awesome/	sync	blog	beginner	Cloudant		Why replication is awesome	Cloudant's replication allows you to replicate your data across Cloudant clusters to provide a global "CDN" for your database. This blog post shows how this can also power the offline-first design pattern, to store data locally first and sync to the cloud when there is an internet connection.	2013-09-05
+http://cloudant.com/blog/search-faceting-from-scratch-2/	search	blog	advanced	Cloudant		Search faceting from scratch	Cloudant Search is based on Apache Lucene which allows facets of your data to be aggregated and counted during the search process. Facets allow your customers to drill-down into the search results, filtering in an powerful and intuitive way.	2014-05-06
+http://cloudant.com/blog/introducing-data-warehousing-and-analytics-with-cloudant-and-dashdb/	analytics	blog	intermediate	Integration		Introducing Data Warehousing and Analytics with Cloudant and dashDB	Cloudant data can be imported into IBM dashDB with a couple clicks in the Cloudant dashboard. Once imported, the data can be queried using SQL and R to allow you to perform ad-hoc queries to gain insights into your data.	2014-10-27
+http://cloudant.com/blog/top-6-questions-from-our-webinar-on-top-6-questions-about-sql-nosql-migrations/	ETL	blog	beginner	Cloudant		Top 6 Questions about SQL -> NoSQL Migrations	Developers coming to Cloudant from an SQL background will have lots of questions about importing data, schemas and authentication. This post answers the most frequently asked questions.	2013-10-15
+http://examples.cloudant.com/lobby-search/_design/lookup/index.html	search	tutorial	beginner	Cloudant		Full Text Indexing and Query	Cloudant Search, based on Apache Lucene, allows full-text and field search across your JSON document store. This post demonstrates the feature set using data from lobbyist disclosures from the US Senate.	2012-04-01
+http://examples.cloudant.com/simplegeo_places/_design/geo/search.html	Geo	tutorial	beginner	Cloudant		Simple Geo searching with Cloudant Search	Cloudant Search's Lucene index allows simple geographic searches to be performed by querying within latitude/longitude ranges. This post shows you how.	2012-04-01
+http://www.youtube.com/watch?v=qaOBCsFjgS8	General	video	beginner	Cloudant		Cloudant why?	Cloudant co-founder Mike Miller talks about Cloudant's origins as database used build to deal with huge datasets produced by the Large Hadron Collider project at CERN.	2012-05-17
+http://www.youtube.com/watch?v=BKQ9kXKoHS8	General	video	beginner	Cloudant		10 Common Misconceptions about CouchDB	Joan Touzet talks about ten common misconceptions about CouchDB and lends insight into best practices and design patterns.	2013-11-25
+http://www.youtube.com/watch?v=dUzXirGdnRs	Query	video	beginner	Cloudant		Introduction to Cloudant Query	Cloudant's Dan DeMichele introduces Cloudant Query, a declartive query language for NoSQL data, based on MongoDB's query language.	2014-07-24
+http://www.youtube.com/watch?v=CbhQiwg5fBs	geo	video	beginner	Cloudant		Building Mobile Apps At The Geospatial Edge	Norman Barker & Chris Glew talk about using Cloudant to create geospatial applications for shipping, logistics and transportation.	2014-08-25
+http://www.youtube.com/watch?v=PVw5nTiyULo	geo	video	beginner	Cloudant		Cloudant's Traffic Tamer App	A demonstration of an offline-first traffic data collection system built with Ford and using PouchDB to Cloudant replication	2014-03-24
+http://www.youtube.com/watch?v=Yhs6kA6JIvQ	sync	video	beginner	Cloudant		Replication in CouchDB	Cloudant co-founter Adam Kocoloski talks about Cloudant's replication capabilities for producing applications where systems can be disconnected and sync seamlessly when reconnected.	2012-05-18
+http://www.youtube.com/watch?v=Ej5BmWjjqbY	IoT	video	beginner	Cloudant		Building IoT Apps on Cloudant, with Kiwi Wearables	Andy Ellicott and John David Chibuk talk about an Internet of Things application to record data captured from wearable technology and recorded in Cloudant 	2014-07-17
+http://www.youtube.com/watch?v=DvQVviHqkoM	Mobile	video	beginner	Cloudant		Overcoming Mobile App Challenges with IBM MobileFirst & Cloudant	Anthony Abdulla and Michael Snare talk about how Cloudant is at the heart of IBM's MobileFirst framework for creating the next generation of mobile apps.	2014-10-23
+http://www.youtube.com/watch?v=kWgAQeAw9Qo	Health	video	beginner	Cloudant		Using NoSQL DBaaS to launch Life Science Software	Claudius Li and Barry Wark talk about how Life Science Software uses Cloudant to store biological and chemical experimental data.	2014-09-11
+http://www.youtube.com/watch?v=sqW-Vi74FKc	IoT	video	beginner	Cloudant		The Cloud Application Stack for IOT	Dan DeMichele talks about how Cloudant is uniquely positioned to store data from mobile and Internet-of-Things devices, from edge locations or using off-line first design patterns.	2014-06-30
+https://cloudant.com/for-developers/libraries-and-tutorials/	tools	page	beginner	Cloudant	Java,C#,Javascript,Node.js,PHP,Python,Ruby,Scala	Libraries and Tutorials	A list of software libraries and tutorials for a variety of programming languages	2013-01-01
+http://examples.cloudant.com/whatwouldbiebersay/_design/whatwouldbiebersay/index.html	MapReduce	tutorial	intermediate	Cloudant		Data Rich Applications	A demonstration of how Cloudant can use MapReduce to gain insights to large JSON datasets.	2013-01-01
+https://cloudant.com/learning-center/	general	page	beginner	Cloudant		Learning Center	Developers new to Cloudant will welcome this list of guides and tutorials for how to get started with Cloudant.	2013-01-01
+https://ibmdatawarehousing.wordpress.com/2014/12/04/data-security-in-dashdb/	data warehousing	blog	advanced	dashDB	R,SQL	Data Security in dashDB	The security of your data is paramount. This document describes how dashDB's data is encrypted both in transit and at rest and how you can control which users have access to your databases.	2014-12-04
+https://www.youtube.com/watch?v=Idq-24nD9DY	data warehousing	video	beginner	dashDB	R,SQL	IBM dashDB - Keeping data warehouse infrastructure out of your way	IBM dashDB allows ad-hoc querying of data from Cloudant using R or SQL for data warehousing and predictive analytics.	2014-11-17
+https://ibmdatawarehousing.wordpress.com/2014/10/17/warehouse-as-a-service-adam/	data warehousing	blog	intermediate	dashDB	R,SQL	Saying Goodbye to Messy Data with Data Warehousing and Analytics with Cloudant and dashDB	IBM dashDB's scheam discovery technology can seamlessly convert complex JSON documents stored in IBM Cloudant into tables. This guide shows how.	2014-10-17
+https://hub.jazz.net/project/ibmdatabase/dashDB/overview	data warehousing	page	beginner	dashDB	java,ruby,nodejs,python,php,go	dashDB Sample Applications	A range of sample applications to explore that highlight the features of IBM dashDB on BlueMix.	2015-04-01

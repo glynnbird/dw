@@ -22,6 +22,8 @@
       body { margin-top: 70px}
       .sep { margin-right: 10px}
       #facets { background-color: #aaa; padding-bottom:30px;}
+      .descripiton { color: #555;}
+      .body { font-style:italic; color: #999; }
     </style>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -74,7 +76,7 @@
       var q = "";
       var sort = null;
       if(searchText.length>0) {
-        q = "(name:"+searchText + " OR body:"+searchText+")";
+        q = "(name:"+searchText + " OR body:"+searchText+ " OR full_name:"+searchText + " OR description:"+searchText+")";
       } else {
         q = "*:*";
         sort = '["-date"]'; // newest first
@@ -113,7 +115,10 @@
           var doc = data.rows[i].doc;
           html += '<div class="alert">';
           html += '<h3><a href="' + doc.url + '" target="_new">'+doc.name+'</a></h3>';
-          html += '<p>' + doc.body.split(' ').splice(0,100).join(' ') +'...</p>'
+          html += '<div class="description">' + doc.description + '</div>';
+          if(doc.body.length > 0) {
+            html += '<div class="body">' + doc.body.split(' ').splice(0,100).join(' ') +'...</div>';          
+          }
           html += '<span class="label label-default sep">' + doc.type + '</span>'
           for(var j in doc.solutions) {
             html += '<span class="label label-primary sep">' + doc.solutions[j] + '</span>'
