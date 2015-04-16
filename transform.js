@@ -40,6 +40,7 @@ var x = function(raw) {
   doc.name = raw.title;
   doc.friendly_name = "";
   doc.imageurl = raw.imageurl;
+  doc.level = raw.level;
   return doc;
 }
 
