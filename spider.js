@@ -9,13 +9,21 @@ var dw = cloudant.db.use('dw');
 var q = async.queue(function(doc, callback) {
   request(doc.url, function (error, response, body) {
 //       console.log(body) // Show the HTML for the Google homepage. 
+    try {
       var data = unfluff(body);
       doc.full_name = data.title;
       doc.body = data.text;
-      dw.insert(doc, function(err, d) {
-        console.log(d);
-        callback(null);
-      });
+
+    } catch(e) {
+      doc.full_name = doc.name;
+      doc.body="";
+    }
+
+    dw.insert(doc, function(err, d) {
+      console.log(d);
+      callback(null);
+    });  
+
   });
 },5);
 

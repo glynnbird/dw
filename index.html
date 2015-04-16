@@ -24,6 +24,7 @@
       #facets { background-color: #aaa; padding-bottom:30px;}
       .descripiton { color: #555;}
       .body { font-style:italic; color: #999; }
+      #sort, #qs { font-family:"Courier New", Courier, monospace}
     </style>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -50,6 +51,7 @@
         <h1>Dev Centre/Center</h1>
         <p>For all of your Cloud Data Services needs ...</p>
         <h4 id="qs"></h4>
+        <div id="sort"></div>
       </div>
 
     
@@ -70,13 +72,21 @@
     
     
     var filter = { };
+    
+    
+    var sanitise = function(str) {
+      var s = str.replace(/'/g,"");
+      s = s.replace(/\W/g," ");
+      return "'" + s + "'";
+    }
     var doSearch = function() {
       
       var searchText = $('#searchtext').val();
       var q = "";
       var sort = null;
       if(searchText.length>0) {
-        q = "(name:"+searchText + " OR body:"+searchText+ " OR full_name:"+searchText + " OR description:"+searchText+")";
+        var niceText = sanitise(searchText);
+        q = "(name:"+niceText + " OR body:"+niceText+ " OR full_name:"+niceText + " OR description:"+niceText+")";
       } else {
         q = "*:*";
         sort = '["-date"]'; // newest first
@@ -99,7 +109,10 @@
         };       
       if(sort) {
         qs.sort = sort;
-      } 
+        $('#sort').html("Sort = " + sort);
+      } else {
+        $('#sort').html("");
+      }
       var obj = {
         url: "https://reader.cloudant.com/dw/_design/search/_search/search",
         data: qs,
@@ -116,9 +129,6 @@
           html += '<div class="alert">';
           html += '<h3><a href="' + doc.url + '" target="_new">'+doc.name+'</a></h3>';
           html += '<div class="description">' + doc.description + '</div>';
-          if(doc.body.length > 0) {
-            html += '<div class="body">' + doc.body.split(' ').splice(0,100).join(' ') +'...</div>';          
-          }
           html += '<span class="label label-default sep">' + doc.type + '</span>'
           for(var j in doc.solutions) {
             html += '<span class="label label-primary sep">' + doc.solutions[j] + '</span>'
@@ -127,7 +137,6 @@
             html += '<span class="label label-success sep">' + doc.technologies[j] + '</span>'
           }
           if(doc.languages && doc.languages.length>0) {
-             console.log(doc.languages)
             for(var j in doc.languages) {
               html += '<span class="label label-info sep">' + doc.languages[j] + '</span>'
             }
@@ -140,16 +149,16 @@
         
         // render facets
         var html ="";
-        html += '<h3>Solutions</h3>';
-        for(var j in data.counts.solution) {
-          html += '<a href="Javascript:applyFilter(\'solution\',\'' + j + '\')">';
-          html += '<span class="label label-primary sep">' + j + '(' + data.counts.solution[j] +  ')</span>';
-          html += '</a><br>'    
-        }
         html += '<h3>Type</h3>';
         for(var j in data.counts.type) {
           html += '<a href="Javascript:applyFilter(\'type\',\'' + j + '\')">';
           html += '<span class="label label-default sep">' + j + '(' + data.counts.type[j] +  ')</span>'    
+          html += '</a><br>'    
+        }
+        html += '<h3>Solutions</h3>';
+        for(var j in data.counts.solution) {
+          html += '<a href="Javascript:applyFilter(\'solution\',\'' + j + '\')">';
+          html += '<span class="label label-primary sep">' + j + '(' + data.counts.solution[j] +  ')</span>';
           html += '</a><br>'    
         }
         html += '<h3>Technologies</h3>';
