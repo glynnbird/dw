@@ -104,7 +104,7 @@
       var qs = {
           q:q,
           limit:limit,
-          counts: '["solution","technology","type","level","language"]',
+          counts: '["topic","technology","type","level","language"]',
           include_docs:true
         };       
       if(sort) {
@@ -130,8 +130,8 @@
           html += '<h3><a href="' + doc.url + '" target="_new">'+doc.name+'</a></h3>';
           html += '<div class="description">' + doc.description + '</div>';
           html += '<span class="label label-default sep">' + doc.type + '</span>'
-          for(var j in doc.solutions) {
-            html += '<span class="label label-primary sep">' + doc.solutions[j] + '</span>'
+          for(var j in doc.topic) {
+            html += '<span class="label label-primary sep">' + doc.topic[j] + '</span>'
           }
           for(var j in doc.technologies) {
             html += '<span class="label label-success sep">' + doc.technologies[j] + '</span>'
@@ -158,10 +158,10 @@
           html += '<span class="label label-default sep">' + j + '(' + data.counts.type[j] +  ')</span>'    
           html += '</a><br>'    
         }
-        html += '<h3>Solutions</h3>';
-        for(var j in data.counts.solution) {
-          html += '<a href="Javascript:applyFilter(\'solution\',\'' + j + '\')">';
-          html += '<span class="label label-primary sep">' + j + '(' + data.counts.solution[j] +  ')</span>';
+        html += '<h3>Topics</h3>';
+        for(var j in data.counts.topic) {
+          html += '<a href="Javascript:applyFilter(\'topic\',\'' + j + '\')">';
+          html += '<span class="label label-primary sep">' + j + '(' + data.counts.topic[j] +  ')</span>';
           html += '</a><br>'    
         }
         html += '<h3>Technologies</h3>';

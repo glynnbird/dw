@@ -13,7 +13,7 @@ var template =  {
    ],
    "friendly_name":"",
    "description":"",
-   "solutions":[  
+   "topic":[  
    ],
    "featured":false
 };
@@ -25,15 +25,23 @@ var genhash = function(str) {
   return shasum.digest('hex');
 };
 
+var split = function(str) {
+  var s = str.split(",");
+  for(var i in s) {
+    s[i] = s[i].replace(/^ +/,"").replace(/ +$/,"");
+  }
+  return s;
+}
+
 var x = function(raw) {
   var doc = JSON.parse(JSON.stringify(template));
   doc._id = genhash(raw.url);
   doc.url = raw.url;
   doc.type= raw.type;
-  doc.technologies = raw.product.split(",");
-  doc.languages = (raw.language.length>0)?raw.language.split(","):[]
+  doc.technologies = split(raw.product);
+  doc.languages = (raw.language.length>0)?split(raw.language):[]
   doc.githubId="";
-  doc.solutions = raw.topic.split(",");
+  doc.topic = split(raw.topic);
   doc.description = raw.description;
   doc.created_at = raw.date;
   doc.updated_at = raw.date;
