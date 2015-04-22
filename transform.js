@@ -15,7 +15,8 @@ var template =  {
    "description":"",
    "topic":[  
    ],
-   "featured":false
+   "featured":false,
+   "body": ""
 };
 var crypto = require('crypto');
 

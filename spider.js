@@ -34,6 +34,9 @@ q.drain = function() {
 
 dw.list({include_docs:true},function(err, data) {
   for(var i in data.rows) {
-    q.push(data.rows[i].doc);
+    if(data.rows[i].doc.body.length==0) {
+      q.push(data.rows[i].doc);
+    }
+
   }
 });
