@@ -16,7 +16,8 @@ var template =  {
    "topic":[  
    ],
    "featured":false,
-   "body": ""
+   "body": "",
+   "related": []
 };
 var crypto = require('crypto');
 
@@ -50,6 +51,13 @@ var x = function(raw) {
   doc.friendly_name = "";
   doc.imageurl = raw.imageurl;
   doc.level = raw.level;
+  if(raw.related && raw.related.length >0) {
+    raw.related = raw.related.split(",");
+    for(var i in raw.related) {
+      raw.related[i] = genhash(raw.related[i]);
+    }
+    doc.related = raw.related;
+  }
   return doc;
 }
 
