@@ -5,7 +5,7 @@
   "indexes": {
     "search": {
       "analyzer": "standard",
-      "index": "function (doc) {\n if (doc.name) {\n   index(\"name\", doc.name);\n   index(\"full_name\", doc.full_name);\n   index(\"description\", doc.description);\n    index(\"body\", doc.body);\n   for (var i in doc.languages) {\n     index(\"language\", doc.languages[i], { facet:true});\n   }  \n   for (var i in doc.technologies) {\n     index(\"technology\", doc.technologies[i], { facet:true});\n   }\n   for (var i in doc.topic) {\n     index(\"topic\", doc.topic[i], { facet:true});\n   }\n   index(\"type\", doc.type, {facet:true});\n   index(\"date\", doc.created_at); \n    index(\"level\", doc.level, {facet:true});\n }\n};"
+      "index": "function (doc) {\n if (doc.name) {\n   index(\"name\", doc.name);\n   index(\"full_name\", doc.full_name);\n   index(\"description\", doc.description);\n   index(\"body\", doc.body);\n   var def = [ doc.name, doc.full_name, doc.description, doc.body, doc.languages.join(\" \"), doc.technologies.join(\" \"), doc.topic.join(\" \"), doc.type, doc.level];\n   index(\"default\", def.join(\" \"));\n   for (var i in doc.languages) {\n     index(\"language\", doc.languages[i], { facet:true});\n   }  \n   for (var i in doc.technologies) {\n     index(\"technology\", doc.technologies[i], { facet:true});\n   }\n   for (var i in doc.topic) {\n     index(\"topic\", doc.topic[i], { facet:true});\n   }\n   index(\"type\", doc.type, {facet:true});\n   index(\"date\", doc.created_at); \n    index(\"level\", doc.level, {facet:true});\n }\n};"
     }
   }
 }

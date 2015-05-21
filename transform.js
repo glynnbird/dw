@@ -17,7 +17,12 @@ var template =  {
    ],
    "featured":false,
    "body": "",
-   "related": []
+   "related": [],
+   "githuburl": "",
+   "videourl": "",
+   "demourl": "",
+   "documentationurl": "",
+   "otherurl": ""
 };
 var crypto = require('crypto');
 
@@ -28,6 +33,7 @@ var genhash = function(str) {
 };
 
 var split = function(str) {
+  str = str.replace(/,$/,"");
   var s = str.split(",");
   for(var i in s) {
     s[i] = s[i].replace(/^ +/,"").replace(/ +$/,"");
@@ -58,6 +64,8 @@ var x = function(raw) {
     }
     doc.related = raw.related;
   }
+  doc.githuburl = raw.githuburl;
+  doc.videourl = raw.videourl;
   return doc;
 }
 

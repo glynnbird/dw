@@ -34,7 +34,8 @@ q.drain = function() {
 
 dw.list({include_docs:true},function(err, data) {
   for(var i in data.rows) {
-    if(data.rows[i].doc.body.length==0) {
+    if(typeof data.rows[i].doc.body == "string" && data.rows[i].doc.body.length==0) {
+      console.log(data.rows[i].doc)
       q.push(data.rows[i].doc);
     }
 
